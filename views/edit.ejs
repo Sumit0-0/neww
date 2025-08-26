@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Entry</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>Edit Entry</h2>
+  <form action="/edit/<%= entry.id %>" method="post">
+    <label>First Name:</label>
+    <input type="text" name="firstName" value="<%= entry.firstName %>" required><br><br>
+
+    <label>Place:</label>
+    <input type="text" name="place" value="<%= entry.place %>" required><br><br>
+
+ <label>Pooja Type:</label>
+<select name="poojaType" required>
+  <option value="Samoohika Ranga Pooja" <%= entry.poojaType === "Samoohika Ranga Pooja" ? "selected" : "" %>>Samoohika Ranga Pooja</option>
+  <option value="Pushpalankara Pooja" <%= entry.poojaType === "Pushpalankara Pooja" ? "selected" : "" %>>Pushpalankara Pooja</option>
+  <option value="Idi-dina  Pooja" <%= entry.poojaType === "Idi-dina  Pooja" ? "selected" : "" %>>Idi-dina  Pooja</option>
+  <option value="Madyana Pooja" <%= entry.poojaType === "Madyana Pooja" ? "selected" : "" %>>Madyana Pooja</option>
+  <option value="Rathri Pooja" <%= entry.poojaType === "Rathri Pooja" ? "selected" : "" %>>Rathri Pooja</option>
+  <option value="Gana-ohma" <%= entry.poojaType === "Gana-ohma" ? "selected" : "" %>>Gana-ohma</option>
+  <option value="Appa pooja" <%= entry.poojaType === "Appa pooja" ? "selected" : "" %>>Appa pooja</option>
+  <option value="Akki (rice) donation" <%= entry.poojaType === "Akki (rice) donation" ? "selected" : "" %>>Akki (rice) donation</option>
+  <option value="Coconut donation" <%= entry.poojaType === "Coconut donation" ? "selected" : "" %>>Coconut donation</option>
+  <option value="Other" <%= entry.poojaType === "Other" ? "selected" : "" %>>Other</option>
+</select>
+<br><br>
+
+
+    <label>Amount:</label>
+    <input type="number" name="amount" value="<%= entry.amount %>" required><br><br>
+
+    <button type="submit">Update</button>
+  </form>
+  <br>
+  <a href="/report">Back to Report</a>
+</body>
+</html>

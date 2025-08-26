@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><title>Report</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>Pooja Report</h2>
+
+ <h3>Summary</h3>
+<ul>
+  <% summary.forEach(s => { %>
+    <li>
+      <a href="/report/<%= encodeURIComponent(s.poojaType) %>">
+        <%= s.poojaType %> : <%= s.count %>
+      </a>
+    </li>
+  <% }) %>
+</ul>
+
+<div class="report-container">
+ <h3>All Entries</h3>
+<table border="1" cellpadding="5">
+  <tr><th>Name</th><th>Place</th><th>Pooja Type</th><th>Amount</th><th>Actions</th></tr>
+  <% entries.forEach(e => { %>
+    <tr>
+      <td><%= e.firstName %></td>
+      <td><%= e.place %></td>
+      <td><%= e.poojaType %></td>
+      <td><%= e.amount %></td>
+      <td>
+        <a href="/edit/<%= e.id %>">Edit</a> | 
+        <a href="/delete/<%= e.id %>" onclick="return confirm('Are you sure?')">Delete</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+
+
+  <br>
+  <a href="/form">Back to Form</a>
+  </div>
+  
+</body>
+</html>

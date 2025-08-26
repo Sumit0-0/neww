@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= poojaType %> Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { border-collapse: collapse; width: 80%; margin-top: 20px; }
+    th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+    th { background: #f0f0f0; }
+    .print-btn { margin: 10px 0; }
+  </style>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <div class="report-container">
+  <h2><%= poojaType %> Report</h2>
+
+  <table>
+    <tr><th>Name</th><th>Place</th><th>Amount</th></tr>
+    <% entries.forEach(e => { %>
+      <tr>
+        <td><%= e.firstName %></td>
+        <td><%= e.place %></td>
+        <td><%= e.amount %></td>
+      </tr>
+    <% }) %>
+    <tr>
+      <th colspan="2">TOTAL</th>
+      <th><%= total %></th>
+    </tr>
+  </table>
+
+  <button onclick="window.print()" class="print-btn">🖨 Print This Page</button>
+  <br>
+  <a href="/report">Back to Summary</a>
+  </div>
+</body>
+</html>

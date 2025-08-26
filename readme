@@ -1,0 +1,60 @@
+1. Install Node.js
+
+Download & install from: https://nodejs.org
+
+Choose LTS version (recommended).
+
+2. Copy Your Project
+
+Copy your pooja-app folder (with server.js, views/, package.json etc.) to the other laptop.
+
+Or zip the folder → transfer → unzip.
+
+3. Install Dependencies
+
+Open terminal inside pooja-app and run:
+
+npm install
+
+
+👉 This will read package.json and install express, sqlite3, ejs, etc.
+
+4. Run the App
+node server.js
+
+
+If everything is fine, it will say:
+
+Connected to SQLite database
+Server running at http://localhost:3000
+
+5. Open in Browser
+
+On that laptop, go to:
+👉 http://localhost:3000
+
+🔗 Access From Mobile (same WiFi)
+
+If you want to open it on your mobile phone without online hosting:
+
+Find the laptop’s local IP address:
+
+Run in terminal (Windows):
+
+ipconfig
+
+
+Look for IPv4 Address, e.g. 192.168.1.45.
+
+Keep the app running (node server.js).
+
+On your phone (connected to the same WiFi), open:
+
+http://192.168.1.45:3000
+
+
+👉 Now your phone can access it too 🎉
+
+✅ So, on another laptop you don’t change the code — only run npm install again.
+
+Do you want me to also show you how to make it auto-start when the laptop turns on (so you don’t need to type node server.js every time)?
